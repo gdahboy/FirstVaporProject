@@ -8,4 +8,14 @@ public func routes(_ router: Router) throws {
     router.get("hello") { req in
         return "Hello, world!"
     }
+    router.post("send") { req -> Future<Message> in
+        let username: String = try req.content.syncGet(at: "username")
+        let content: String = try req.content.syncGet(at: "content")
+        let msg = Message(id: nil, username: username, content: content, date: Date())
+        return msg.save(on: req)
+    }
+    router.get { req -> Future<View> in
+        return   try req.view().render("home")
+    }
 }
+

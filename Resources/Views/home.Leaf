@@ -1,0 +1,11 @@
+
+<html>
+<body>
+<h3>Gdahboy</h3>
+<form method="post" action="/send">
+<p>Username: <input type="text" name="username" /></p>
+<p><textarea name="content" rows="10" cols="40" placeholder="Write your message here"></textarea></p>
+<p><input type="submit" /></p>
+</form>
+</body>
+</html>
