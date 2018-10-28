@@ -10,7 +10,7 @@
 <h2>Messages from others…</h2>
 
 #for(message in messages) {
-<p>At #(message.date), #(message.username) wrote: "#(message.content)".</p>
+<p>At #date(message.date , "HH:MM"), #(message.username) wrote: "#(message.content)".</p>
 }
 </body>
 </html>
