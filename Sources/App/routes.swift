@@ -17,7 +17,11 @@ public func routes(_ router: Router) throws {
 
     }
     router.get { req -> Future<View> in
-        return   try req.view().render("home")
+        return Message.query(on: req).all().flatMap(to: View.self) { messages in
+            let context = ["messages": messages]
+            return try req.view().render("home", context)
+        }
     }
-}
 
+
+}

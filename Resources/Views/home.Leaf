@@ -7,5 +7,10 @@
 <p><textarea name="content" rows="10" cols="40" placeholder="Write your message here"></textarea></p>
 <p><input type="submit" /></p>
 </form>
+<h2>Messages from others…</h2>
+
+#for(message in messages) {
+<p>At #(message.date), #(message.username) wrote: "#(message.content)".</p>
+}
 </body>
 </html>
