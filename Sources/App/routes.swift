@@ -13,6 +13,8 @@ public func routes(_ router: Router) throws {
         let content: String = try req.content.syncGet(at: "content")
         let msg = Message(id: nil, username: username, content: content, date: Date())
         return msg.save(on: req)
+
+
     }
     router.get { req -> Future<View> in
         return   try req.view().render("home")
